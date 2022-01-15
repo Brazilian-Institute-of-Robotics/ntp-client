@@ -2,17 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 
 project(mbed_ntp_client)
 
-FILE(GLOB_RECURSE ${PROJECT_NAME}_SOURCES "src/*.c*")
-FILE(GLOB_RECURSE ${PROJECT_NAME}_INCLUDES "include/*.h*")
+find_package(bir_cmake_modules)
 
-install(DIRECTORY include
-    DESTINATION src/${PROJECT_NAME}
-    FILES_MATCHING PATTERN "*.h*"
-    PATTERN "*~" EXCLUDE
-)
-    
-install(DIRECTORY src
-    DESTINATION src/${PROJECT_NAME}
-    FILES_MATCHING PATTERN "*.c*"
-    PATTERN "*~" EXCLUDE
-)
+# Macro defined in bir_cmake_modules
+bir_export_interface_library()
