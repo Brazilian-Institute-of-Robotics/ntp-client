@@ -4,5 +4,8 @@
     <maintainer>ARMmbed</maintainer>
     <license>Apache-2.0</license>
     <url>https://github.com/ARMmbed/ntp-client</url>
+    <depend package="cmake"/>
+    <depend package="bir_cmake_modules"/>
+    <depend package="ntp" />
+    <depend package="mbed"/>
 </package>
-

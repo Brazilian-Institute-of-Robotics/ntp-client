@@ -4,22 +4,37 @@ This library allows you to fetch time information from a NTP server.
 
 For an example application, please see https://github.com/ARMmbed/ntp-client-example.
 
-## Getting started
+## Usage
+> **Note:** This library is not intended to be compiled by itself. Therefore, the consumer application must link to it.
 
-If you don't have an existing Mbed OS project, go ahead and create one.
+To use the library with Mbed OS 6 just add the command below in the application's `CMakeLists.txt` file
 
-```sh
-mbed new ntp-project
-cd ntp-project
+```cmake
+find_package(mbed_ntp_client REQUIRED CONFIG)
 ```
 
-Now add the library to your project.
+and then link with your application, for example
 
-```sh
-mbed import https://github.com/ARMmbed/ntp-client
+```cmake
+[...]
+
+  add_executable(${APP_TARGET}
+    src/main.cpp
+  )
+
+  target_include_directories(${APP_TARGET}
+    PRIVATE  
+      include
+  )
+
+  target_link_libraries(${APP_TARGET}
+    PRIVATE
+      mbed-os
+      mbed_ntp_client::mbed_ntp_client
+  )
+
+[...]
 ```
-
-The library will now be available in your project. Please see the API documentation below for usage information.
 
 ## API
 
