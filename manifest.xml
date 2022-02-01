@@ -7,4 +7,5 @@
     <depend package="cmake"/>
     <depend package="bir_cmake_modules"/>
     <depend package="ntp" />
+    <depend package="mbed"/>
 </package>
